@@ -13,11 +13,11 @@ the Mininet() constructor.
 
 
 from mininet.net import Mininet
-from mininet.node import Controller, OVSSwitch
+from mininet.node import Controller, OVSSwitch, RemoteController
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 
-def multiControllerNet():
+def remoteControllerNet():
     "Create a network from semi-scratch with multiple controllers."
 
    net = Mininet( controller=RemoteController, switch=OVSSwitch)
