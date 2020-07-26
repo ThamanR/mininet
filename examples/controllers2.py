@@ -18,13 +18,11 @@ from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 
 def remoteControllerNet():
-    "Create a network from semi-scratch with multiple controllers."
 
-   net = Mininet( controller=RemoteController, switch=OVSSwitch)
+   net = Mininet( controller=RemoteController, switch=OVSSwitch )
 
-    info( "*** Creating remote controllers\n" )
-    c1 = net.addController( 'c1', ip='172.17.0.2', port=6633, protocols=["OpenFlow13"] )
-   
+    info( "Creating remote controller\n" )
+    c1 = RemoteController( 'c1', ip='172.17.0.2', port=6633, protocols=["OpenFlow13"] )
 
     info( "*** Creating switches\n" )
     s1 = net.addSwitch( 's1',  protocols=["OpenFlow13"]  )
